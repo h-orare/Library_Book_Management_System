@@ -1,16 +1,16 @@
 class Book {
-  constructor(bookTitle, isbn, author, genre, quantityInStock) {
-    this.bookTitle = bookTitle;
-    this.isbn = isbn;
-    this.author = author;
-    this.genre = genre;
-    this.quantityInStock = parseInt(quantityInStock);
+  constructor(BookTitle, ISBN, Author, Genre, QuantityInStock) {
+    this.BookTitle = BookTitle;
+    this.ISBN = ISBN;
+    this.Author = Author;
+    this.Genre = Genre;
+    this.QuantityInStock = parseInt(QuantityInStock);
   }
 
   // Decrease stock when book is borrowed
   borrowBook() {
-    if (this.quantityInStock >= 1) {
-      this.quantityInStock -= 1;
+    if (this.QuantityInStock >= 1) {
+      this.QuantityInStock -= 1;
       return true;
     }
     return false;
@@ -18,11 +18,11 @@ class Book {
 
   // Increase stock when book is returned
   returnBook() {
-    this.quantityInStock += 1;
+    this.QuantityInStock += 1;
   }
 
   toString() {
-    return `${this.bookTitle} (ISBN: ${this.isbn}) by ${this.author} | Genre: ${this.genre} | Stock: ${this.quantityInStock}`;
+    return `${this.BookTitle} (ISBN: ${this.ISBN}) by ${this.Author} | Genre: ${this.Genre} | Stock: ${this.QuantityInStock}`;
   }
 }
 

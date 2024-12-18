@@ -17,7 +17,8 @@ function showMenu() {
   2. List All Students
   3. Borrow Book
   4. Return Book
-  5. Exit
+  5. Show Borrowed Books
+  6. Exit
   `);
   reader.question("Select an option (1-5): ", handleMenuSelection);
 }
@@ -53,7 +54,14 @@ function handleMenuSelection(option) {
         }
       );
       break;
+
     case "5":
+      reader.question("Enter your Student ID: ", (studentID) => {
+        library.getBorrowedBooksByStudent(studentID);
+        showMenu();
+      });
+      break;
+    case "6":
       console.log("Exiting the Library Management System. Goodbye!");
       reader.close(); // Close the readline interface
       break;
