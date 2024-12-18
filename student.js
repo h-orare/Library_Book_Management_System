@@ -6,7 +6,7 @@ class Student {
   }
 
   toString() {
-    return `Student: ${this.studentName} (ID: ${this.studentID}) | Major: ${this.major}`;
+    return `Student Name: ${this.studentName} (ID: ${this.studentID}) | Major: ${this.major}`;
   }
 }
 
