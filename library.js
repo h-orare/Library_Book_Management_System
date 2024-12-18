@@ -9,7 +9,7 @@ class Library {
   constructor() {
     this.books = [];
     this.students = [];
-    this.borrowedBooks = new Map(); // Track borrowed books
+    this.borrowedBooks = new Map(); // To track borrowed books
   }
 
   // Initialize library data (read files once)
@@ -110,12 +110,6 @@ class Library {
     }
 
     const book = this.books.find((b) => b.ISBN === isbn);
-
-    // if (!book) {
-    //   console.log("Error: Book not found.");
-    //   return;
-    // }
-
     const books = this.borrowedBooks.get(studentID);
     const index = books.findIndex((b) => b.ISBN === isbn);
 
