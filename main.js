@@ -46,13 +46,22 @@ function handleMenuSelection(option) {
       });
       break;
     case "4":
-      reader.question(
-        "Enter the ISBN of the book you want to return: ",
-        (isbn) => {
-          library.returnBook(isbn);
-          showMenu();
-        }
-      );
+      // reader.question(
+      //   "Enter the ISBN of the book you want to return: ",
+      //   (isbn) => {
+      //     library.returnBook(isbn);
+      //     showMenu();
+      //   }
+      // );
+      reader.question("Enter your Student ID: ", (studentID) => {
+        reader.question(
+          "Enter the ISBN of the book you want to return: ",
+          (isbn) => {
+            library.returnBook(studentID, isbn);
+            showMenu();
+          }
+        );
+      });
       break;
 
     case "5":
